@@ -1,58 +1,26 @@
-# IE4060 – Autonomous Navigation of TurtleBot3 Burger
+# TurtleBot3 Autonomous Navigation
 
-## Project Overview
+This package is a starter layout for a ROS 2 TurtleBot3 maze-navigation project.
 
-This project develops an autonomous navigation system for a TurtleBot3 Burger robot in a custom maze environment using Gazebo and ROS 2 Jazzy.
+## Layout
 
-## Project Objectives
+- `worlds/maze.world` - Gazebo maze world.
+- `launch/simulation.launch.py` - Starts Gazebo with the maze.
+- `launch/slam.launch.py` - Starts SLAM Toolbox.
+- `launch/navigation.launch.py` - Starts Nav2 with the saved map.
+- `config/nav2_params.yaml` - Nav2 parameters.
+- `maps/` - Map metadata and image.
+- `dqn/` - DQN training and evaluation entry points.
 
-- Create a custom maze environment in Gazebo based on the assignment requirements.
-- Map the maze using SLAM or an appropriate mapping method.
-- Implement autonomous path planning and navigation using ROS 2 Nav2.
-- Allow users to select navigation goals on the map.
-- Develop and evaluate a Deep Q-learning approach.
-- Evaluate navigation performance using travel time, path length, goal completion, and obstacle avoidance.
+## Usage
 
-## Technologies
+After placing this directory in a ROS 2 workspace and adding the package metadata:
 
-- Ubuntu 24.04 LTS
-- ROS 2 Jazzy
-- Gazebo Sim
-- TurtleBot3 Burger
-- SLAM Toolbox
-- Nav2
-- Python
-
-## Repository Structure
-
-```text
-IE4060-TurtleBot3-Autonomous-Navigation/
-├── config/           # Navigation and robot configuration
-├── deep_q_learning/  # Deep Q-learning implementation
-├── docs/             # Project report and documentation
-├── launch/           # ROS 2 launch files
-├── maze_world/       # Gazebo maze world and map files
-│   └── maps/
-├── results/          # Screenshots and evaluation results
-├── src/              # ROS 2 source packages
-├── DEPENDENCIES.md   # Environment and dependency notes
-└── README.md
+```bash
+ros2 launch turtlebot3_maze_navigation simulation.launch.py
+ros2 launch turtlebot3_maze_navigation slam.launch.py
+ros2 launch turtlebot3_maze_navigation navigation.launch.py
 ```
 
-## Team Workflow
-
-1. Agree on tasks with the team before modifying shared files.
-2. Pull the latest changes before starting work.
-3. Test changes in the ROS 2 Jazzy environment.
-4. Commit related changes with clear messages.
-5. Push changes to GitHub and communicate any issues to the team.
-
-## Project Status
-
-Initial repository structure created. Simulation, mapping, navigation, and Deep Q-learning implementation are in progress.
-
-## Academic Context
-
-IE4060 – Robotics and Intelligent Systems  
-BSc (Hons) in Information Technology  
-Sri Lanka Institute of Information Technology (SLIIT)
+The DQN scripts are intentionally scaffolds until a Gymnasium environment and
+policy implementation are selected.
