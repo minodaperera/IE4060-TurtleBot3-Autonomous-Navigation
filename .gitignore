@@ -1,0 +1,25 @@
+# ROS 2 build output
+build/
+install/
+log/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Editors and operating systems
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs and temporary files
+*.log
+*.tmp
+
+# Large trained-model checkpoints
+*.pt
+*.pth
+*.ckpt
