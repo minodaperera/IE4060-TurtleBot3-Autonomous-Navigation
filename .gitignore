@@ -1,0 +1,15 @@
+build/
+install/
+log/
+__pycache__/
+*.pyc
+*.egg-info/
+.venv/
+.vscode/
+.DS_Store
+# Generated from ROS distro base config by scripts/prepare_configs.py
+# Track nav2_params.yaml only after checking it on your own environment.
+results/*.csv
+results/*.json
+# model checkpoints are local outputs; remove this exclusion when ready to submit trained models
+
